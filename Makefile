@@ -7,5 +7,5 @@ clean:
 dep:
 	npm install
 
-dev: clean
-	./node_modules/.bin/webpack-dev-server --hot --inline --history-api-fallback
+dev:
+	./node_modules/.bin/webpack-dev-server

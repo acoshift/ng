@@ -10,6 +10,18 @@ metadata.base = metadata.base || '/'
 module.exports = {
   context: path.join(__dirname, 'src'),
   devtool: debug ? 'inline-sourcemap' : null,
+  devServer: {
+    historyApiFallback: true,
+    inline: true,
+    compress: true,
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: 1000
+    },
+    stats: {
+      colors: true
+    }
+  },
   entry: {
     'vendor': './vendor.js',
     'entry': './entry.js'
@@ -25,9 +37,13 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /(web_modules|node_modules|bower_components)/, loader: 'babel', query: { presets: ['es2015', 'stage-0'] } },
-      { test: /\.(jpe?g|png|gif)$/i, loader: 'file?name=assets/images/[hash].[ext]' },
-      { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9\.=]+)?$/, loader: 'file?name=assets/fonts/[hash].[ext]' },
-      { test: /\.html?$/, loader: 'html?minimize=true' }
+      { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file?name=assets/images/[hash].[ext]' },
+      { test: /\.(ttf|eot)(\?[a-z0-9\.=]+)?$/, loader: 'file?name=assets/fonts/[hash].[ext]' },
+      { test: /\.html?$/, loader: 'html?minimize=true' },
+      { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
+      { test: /\.css$/, loaders: ['style', 'css'] },
+      { test: /\.woff$/, loader: 'url?limit=10000&mimetype=application/font-woff&name=assets/fonts/[hash].[ext]' },
+      { test: /\.woff2$/, loader: 'url?limit=10000&mimetype=application/font-woff2&name=assets/fonts/[hash].[ext]' }
     ]
   },
   plugins: (debug ? [] : [
