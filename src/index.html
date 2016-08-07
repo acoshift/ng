@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en" ng-app="app" ng-controller="AppController as $app">
+<meta charset="utf-8">
+<base href="<%= htmlWebpackPlugin.options.metadata.base %>">
+<title ng-bind="$app.title"><%= htmlWebpackPlugin.options.metadata.title %></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ $app.description || '<%= htmlWebpackPlugin.options.metadata.title %>' }}">
+<div ui-view></div>
+<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+<script src="/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script><% } %>
+<% if (htmlWebpackPlugin.options.debug) { %><script src="/webpack-dev-server.js"></script><% } %>
+</html>
