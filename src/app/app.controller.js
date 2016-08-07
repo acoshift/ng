@@ -1,11 +1,9 @@
-import angular from 'angular'
-
-angular
-  .module('app')
-  .controller('AppController', AppController)
+class AppController {
+  constructor () {
+    this.title = 'ng'
+    this.description = ''
+  }
+}
 
 AppController.$inject = []
-function AppController () {
-  this.title = 'ng'
-  this.description = ''
-}
+export default AppController
