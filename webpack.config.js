@@ -37,7 +37,8 @@ module.exports = {
   },
   module: {
     preLoaders: [
-      { test: /\.js$/, loader: 'source-map' }
+      { test: /\.js$/, loader: 'source-map' },
+      { test: /\.js$/, loader: 'standard', exclude: /(web_modules|node_modules|bower_components)/ }
     ],
     loaders: [
       { test: /\.js$/, exclude: /(web_modules|node_modules|bower_components)/, loader: 'ng-annotate!babel?presets[]=es2015&presets[]=stage-0' },
