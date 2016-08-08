@@ -4,7 +4,7 @@ class AuthService {
   }
 
   signIn () {
-    this.$state.go('dashboard')
+
   }
 }
 

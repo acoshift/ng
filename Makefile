@@ -4,7 +4,11 @@ build: clean
 clean:
 	rm -rf build
 
-dep:
+setup:
+	rm -rf .git/
+	git init
+	git add -A
+	git commit -m "Initial commit"
 	npm install
 
 dev:

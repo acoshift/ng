@@ -9,7 +9,8 @@ metadata.base = metadata.base || '/'
 
 module.exports = {
   context: path.join(__dirname, 'src'),
-  devtool: debug ? 'inline-sourcemap' : null,
+  devtool: debug ? 'source-map' : null,
+  debug: debug,
   devServer: {
     historyApiFallback: true,
     inline: true,
@@ -35,6 +36,9 @@ module.exports = {
     modulesDirectories: ['web_modules', 'node_modules', 'bower_components']
   },
   module: {
+    preLoaders: [
+      { test: /\.js$/, loader: 'source-map' }
+    ],
     loaders: [
       { test: /\.js$/, exclude: /(web_modules|node_modules|bower_components)/, loader: 'babel', query: { presets: ['es2015', 'stage-0'] } },
       { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file?name=assets/images/[hash].[ext]' },
@@ -55,8 +59,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: '!!ejs!./src/index.html',
-      metadata,
-      debug
+      metadata: metadata
     }),
     new webpack.DefinePlugin({
       metadata: JSON.stringify(metadata)

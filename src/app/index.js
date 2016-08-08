@@ -1,6 +1,7 @@
 import angular from 'angular'
 
-import ServiceModule from './service'
+import Services from './services'
+import Components from './components'
 
 import Config from './config'
 import Run from './run'
@@ -10,7 +11,8 @@ angular
   .module('app', [
     'ui.router',
 
-    ServiceModule
+    Services,
+    Components
   ])
   .config(Config)
   .run(Run)
