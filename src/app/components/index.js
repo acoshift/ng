@@ -1,8 +1,8 @@
 import angular from 'angular'
 
-const module = 'app.components'
+import Menu from './menu/menu'
 
-angular
-  .module(module, [])
-
-export default module
+export default angular
+  .module('app.components', [])
+  .component(...Menu)
+  .name

@@ -2,4 +2,4 @@ import 'lodash'
 import 'rxjs'
 
 import 'angular'
-import 'angular-ui-router'
+import '@angular/router/angular1/angular_1_router'

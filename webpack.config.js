@@ -40,7 +40,7 @@ module.exports = {
       { test: /\.js$/, loader: 'source-map' }
     ],
     loaders: [
-      { test: /\.js$/, exclude: /(web_modules|node_modules|bower_components)/, loader: 'babel', query: { presets: ['es2015', 'stage-0'] } },
+      { test: /\.js$/, exclude: /(web_modules|node_modules|bower_components)/, loader: 'babel?presets[]=es2015&presets[]=stage-0' },
       { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file?name=assets/images/[hash].[ext]' },
       { test: /\.(ttf|eot)(\?[a-z0-9\.=]+)?$/, loader: 'file?name=assets/fonts/[hash].[ext]' },
       { test: /\.html?$/, loader: 'html?minimize=true' },

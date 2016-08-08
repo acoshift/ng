@@ -1,7 +1,6 @@
-function Config ($urlRouterProvider, $locationProvider) {
+function Config ($locationProvider) {
   $locationProvider.html5Mode(true)
-  $urlRouterProvider.otherwise('/')
 }
 
-Config.$inject = ['$urlRouterProvider', '$locationProvider']
+Config.$inject = ['$locationProvider']
 export default Config

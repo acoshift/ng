@@ -2,18 +2,22 @@ import angular from 'angular'
 
 import Services from './services'
 import Components from './components'
+import Pages from './pages'
 
 import Config from './config'
-import Run from './run'
-import AppController from './app.controller'
+import App from './app'
+import Html from './html'
 
 angular
   .module('app', [
-    'ui.router',
+    'ngComponentRouter',
+    // 'ui.router',
 
     Services,
-    Components
+    Components,
+    Pages
   ])
+  .value('$routerRootComponent', 'app')
   .config(Config)
-  .run(Run)
-  .controller('AppController', AppController)
+  .controller(...Html)
+  .component(...App)

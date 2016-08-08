@@ -1,8 +1,5 @@
 import angular from 'angular'
 
-const module = 'app.services'
-
-angular
-  .module(module, [])
-
-export default module
+export default angular
+  .module('app.services', [])
+  .name
