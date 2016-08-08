@@ -1,5 +1,8 @@
 # ng
+
 Acoshift's Angular.js Boilerplate
+
+Angular.js + ES6 + Component Router + Webpack
 
 ## Quick start
 
