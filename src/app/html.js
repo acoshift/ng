@@ -5,5 +5,4 @@ class Html {
   }
 }
 
-Html.$inject = []
 export default ['Html', Html]

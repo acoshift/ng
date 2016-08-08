@@ -2,11 +2,12 @@ import template from './app.html'
 
 class App {
   constructor () {
+    'ngInject'
+
     console.log('app')
   }
 }
 
-App.$inject = []
 export default ['app', {
   template,
   controller: App,
