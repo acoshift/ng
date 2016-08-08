@@ -3,7 +3,7 @@ import angular from 'angular'
 import ServiceModule from './service'
 
 import Config from './config'
-import Run from './Run'
+import Run from './run'
 import AppController from './app.controller'
 
 angular
@@ -13,5 +13,5 @@ angular
     ServiceModule
   ])
   .config(Config)
-  .Run(Run)
+  .run(Run)
   .controller('AppController', AppController)
