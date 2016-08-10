@@ -22,4 +22,8 @@ const app = angular
   ...Containers
 ].forEach((x) => app.component(x.selector, x))
 
+;[
+  ...Services
+].forEach((x) => app.service(x.name, x))
+
 angular.bootstrap(document, ['app'], { strictDi: true })

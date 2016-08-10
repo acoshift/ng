@@ -1,5 +1,3 @@
-import angular from 'angular'
+export default [
 
-export default angular
-  .module('app.services', [])
-  .name
+]
