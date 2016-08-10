@@ -1,9 +1,5 @@
-import template from './menu.html'
-
-class Menu {
+export default class Menu {
+  constructor () {
+    'ngInject'
+  }
 }
-
-export default ['menu', {
-  template,
-  controller: Menu
-}]

@@ -1,8 +1,8 @@
-class Html {
+export default class Html {
   constructor () {
+    'ngInject'
+
     this.title = 'ng'
     this.description = ''
   }
 }
-
-export default ['Html', Html]

@@ -1,10 +1,10 @@
 import angular from 'angular'
 
-import Home from './home/home'
-import About from './about/about'
+import Home from './home'
+import About from './about'
 
 export default angular
   .module('app.containers', [])
-  .component(...Home)
-  .component(...About)
+  .component('home', Home)
+  .component('about', About)
   .name

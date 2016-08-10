@@ -1,8 +1,8 @@
 import angular from 'angular'
 
-import Menu from './menu/menu'
+import Menu from './menu'
 
 export default angular
   .module('app.components', [])
-  .component(...Menu)
+  .component('menu', Menu)
   .name

@@ -8,11 +8,11 @@ class App {
   }
 }
 
-export default ['app', {
+export default {
   template,
   controller: App,
   $routeConfig: [
     { path: '/', name: 'Home', component: 'home' },
     { path: '/about', name: 'About', component: 'about' }
   ]
-}]
+}

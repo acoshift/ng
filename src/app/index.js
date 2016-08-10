@@ -18,5 +18,5 @@ angular
   ])
   .value('$routerRootComponent', 'app')
   .config(Config)
-  .controller(...Html)
-  .component(...App)
+  .controller('Html', Html)
+  .component('app', App)
