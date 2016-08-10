@@ -15,7 +15,7 @@ const app = angular
     Services
   ])
   .config(Config)
-console.dir(AppComponent)
+
 ;[
   AppComponent,
   ...Components,
