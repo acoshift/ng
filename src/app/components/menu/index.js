@@ -1,5 +1,5 @@
 import Menu from './menu'
-import template from './template'
+import template from './menu.html'
 
 export default {
   template,
