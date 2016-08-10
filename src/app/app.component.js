@@ -1,6 +1,6 @@
-import template from './app.html'
+import template from './app.component.html'
 
-class App {
+class AppComponent {
   constructor () {
     'ngInject'
 
@@ -10,7 +10,7 @@ class App {
 
 export default {
   template,
-  controller: App,
+  controller: AppComponent,
   $routeConfig: [
     { path: '/', name: 'Home', component: 'home' },
     { path: '/about', name: 'About', component: 'about' }

@@ -1,3 +1,3 @@
-import './app'
+import './app/main'
 
 require('./scss/app.scss')

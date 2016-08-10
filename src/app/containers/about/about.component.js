@@ -1,4 +1,4 @@
-export default class About {
+export default class AboutComponent {
   constructor () {
     'ngInject'
 

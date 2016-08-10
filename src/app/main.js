@@ -5,7 +5,7 @@ import Components from './components'
 import Containers from './containers'
 
 import Config from './config'
-import App from './app'
+import AppComponent from './app.component'
 import Html from './html'
 
 angular
@@ -19,4 +19,4 @@ angular
   .value('$routerRootComponent', 'app')
   .config(Config)
   .controller('Html', Html)
-  .component('app', App)
+  .component('app', AppComponent)
