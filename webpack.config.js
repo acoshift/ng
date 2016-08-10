@@ -63,7 +63,7 @@ module.exports = {
       metadata: metadata
     }),
     new webpack.DefinePlugin({
-      metadata: JSON.stringify(metadata)
+      'process.env.metadata': JSON.stringify(metadata)
     })
   ])
 }
