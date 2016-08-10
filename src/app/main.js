@@ -1,4 +1,5 @@
 import angular from 'angular'
+import uiRouter from 'angular-ui-router'
 
 import Services from './services'
 import Components from './components'
@@ -6,17 +7,19 @@ import Containers from './containers'
 
 import Config from './config'
 import AppComponent from './app.component'
-import Html from './html'
 
-angular
+const app = angular
   .module('app', [
-    'ngComponentRouter',
+    uiRouter,
 
-    Services,
-    Components,
-    Containers
+    Services
   ])
-  .value('$routerRootComponent', 'app')
   .config(Config)
-  .controller('Html', Html)
-  .component('app', AppComponent)
+console.dir(AppComponent)
+;[
+  AppComponent,
+  ...Components,
+  ...Containers
+].forEach((x) => app.component(x.selector, x))
+
+angular.bootstrap(document, ['app'], { strictDi: true })

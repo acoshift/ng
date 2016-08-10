@@ -1,10 +1,7 @@
-import angular from 'angular'
+import HomeComponent from './home.component'
+import AboutComponent from './about.component'
 
-import HomeComponent from './home'
-import AboutComponent from './about'
-
-export default angular
-  .module('app.containers', [])
-  .component('home', HomeComponent)
-  .component('about', AboutComponent)
-  .name
+export default [
+  HomeComponent,
+  AboutComponent
+]

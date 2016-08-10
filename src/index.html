@@ -1,11 +1,9 @@
 <!doctype html>
-<html lang="en" ng-app="app" ng-controller="Html as $html" ng-strict-di>
 <meta charset="utf-8">
 <base href="<%= htmlWebpackPlugin.options.metadata.base %>">
-<title ng-bind="$html.title"><%= htmlWebpackPlugin.options.metadata.title %></title>
+<title><%= htmlWebpackPlugin.options.metadata.title %></title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="{{ $html.description || '<%= htmlWebpackPlugin.options.metadata.title %>' }}">
+<meta name="description" content="<%= htmlWebpackPlugin.options.metadata.title %>">
 <app></app>
 <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
 <script src="/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script><% } %>
-</html>
